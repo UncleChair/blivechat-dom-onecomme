@@ -1,0 +1,1809 @@
+@import url("https://fonts.googleapis.com/css?family=Source%20Sans%20Pro");
+yt-live-chat-renderer {
+    background-color: transparent !important
+}
+
+yt-live-chat-ticker-renderer {
+    background-color: transparent !important;
+    box-shadow: none !important
+}
+
+yt-live-chat-author-chip #author-name {
+    background-color: transparent !important
+}
+
+yt-live-chat-item-list-renderer #items {
+    overflow: hidden !important
+}
+
+yt-live-chat-item-list-renderer #item-scroller {
+    overflow: hidden !important
+}
+
+yt-live-chat-text-message-renderer #content,
+yt-live-chat-membership-item-renderer #content {
+    overflow: visible !important
+}
+
+yt-live-chat-header-renderer,
+yt-live-chat-message-input-renderer {
+    display: none !important
+}
+
+yt-live-chat-text-message-renderer[is-deleted],
+yt-live-chat-membership-item-renderer[is-deleted] {
+    display: none !important
+}
+
+yt-live-chat-mode-change-message-renderer,
+yt-live-chat-viewer-engagement-message-renderer,
+yt-live-chat-restricted-participation-renderer {
+    display: none !important
+}
+
+yt-live-chat-text-message-renderer a,
+yt-live-chat-membership-item-renderer a {
+    text-decoration: none !important
+}
+
+yt-live-chat-text-message-renderer {
+    padding-left: 4px !important;
+    padding-right: 4px !important
+}
+
+yt-live-chat-renderer * {
+    font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "\5FAE \8F6F \96C5 \9ED1 ", SimHei, Arial, sans-serif;
+    font-size: 21.6px !important;
+    line-height: 28px !important
+}
+
+yt-live-chat-text-message-renderer #author-photo,
+yt-live-chat-text-message-renderer #author-photo img {
+    width: 60px !important;
+    height: 60px !important;
+    border-radius: 4px !important;
+    margin-right: 16px !important
+}
+
+yt-live-chat-membership-item-renderer #author-photo,
+yt-live-chat-membership-item-renderer #author-photo img {
+    width: 45px !important;
+    height: 45px !important;
+    border-radius: 3px !important;
+    margin-right: 11.25px !important
+}
+
+yt-live-chat-paid-message-renderer #author-photo,
+yt-live-chat-paid-message-renderer #author-photo img {
+    width: 55px !important;
+    height: 55px !important;
+    border-radius: 3px !important;
+    margin-right: 11.25px !important
+}
+
+yt-live-chat-text-message-renderer:not([is-owner="true"]):not([is-admin="true"])[author-type="member"] #author-photo {
+    margin-right: 26px !important
+}
+
+yt-live-chat-text-message-renderer #author-name[type="owner"],
+yt-live-chat-text-message-renderer yt-live-chat-author-badge-renderer[type="owner"] {
+    color: #000000 !important
+}
+
+yt-live-chat-text-message-renderer #author-name[type="moderator"],
+yt-live-chat-text-message-renderer yt-live-chat-author-badge-renderer[type="moderator"] {
+    color: #000000 !important
+}
+
+yt-live-chat-text-message-renderer #author-name[type="member"],
+yt-live-chat-text-message-renderer yt-live-chat-author-badge-renderer[type="member"] {
+    color: #000000 !important
+}
+
+yt-live-chat-text-message-renderer #author-name {
+    color: #000000 !important;
+    font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "\5FAE \8F6F \96C5 \9ED1 ", SimHei, Arial, sans-serif;
+    font-size: 20px !important;
+    line-height: 28px !important
+}
+
+yt-live-chat-text-message-renderer #chat-badges {
+    display: none !important;
+    vertical-align: text-top !important
+}
+
+yt-live-chat-author-medal-renderer {
+    display: none
+}
+
+#medal-name.yt-live-chat-author-medal-renderer {
+    font-size: 18px !important;
+    line-height: 18px !important
+}
+
+#medal-level.yt-live-chat-author-medal-renderer {
+    font-size: 18px !important;
+    line-height: 18px !important
+}
+
+yt-live-chat-text-message-renderer #message,
+yt-live-chat-text-message-renderer #message * {
+    color: #000000 !important;
+    font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "\5FAE \8F6F \96C5 \9ED1 ", SimHei, Arial, sans-serif;
+    font-size: 21.6px !important;
+    line-height: 28px !important
+}
+
+yt-live-chat-text-message-renderer #message {
+    display: inline !important;
+    overflow: visible !important
+}
+
+yt-live-chat-text-message-renderer #timestamp {
+    display: none !important;
+    color: #999999 !important;
+    font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "\5FAE \8F6F \96C5 \9ED1 ", SimHei, Arial, sans-serif;
+    font-size: 21.6px !important;
+    line-height: 28px !important
+}
+
+body {
+    background-color: rgba(0, 0, 0, 0);
+    overflow: visible!important;
+}
+
+yt-live-chat-text-message-renderer,
+yt-live-chat-text-message-renderer[is-highlighted] {
+    background-color: rgba(204, 204, 204, 0) !important
+}
+
+yt-live-chat-text-message-renderer[author-type="owner"],
+yt-live-chat-text-message-renderer[author-type="owner"][is-highlighted] {
+    background-color: rgba(255, 214, 0, 0) !important
+}
+
+yt-live-chat-text-message-renderer[author-type="moderator"],
+yt-live-chat-text-message-renderer[author-type="moderator"][is-highlighted] {
+    background-color: rgba(94, 132, 241, 0) !important
+}
+
+yt-live-chat-text-message-renderer[author-type="member"],
+yt-live-chat-text-message-renderer[author-type="member"][is-highlighted] {
+    background-color: rgba(15, 157, 88, 0) !important
+}
+
+yt-live-chat-paid-message-renderer {
+    margin: 4px 0 !important
+}
+
+yt-live-chat-paid-message-renderer #author-name,
+yt-live-chat-paid-message-renderer #author-name *,
+yt-live-chat-membership-item-renderer #header-content-inner-column,
+yt-live-chat-membership-item-renderer #header-content-inner-column * {
+    color: #000000 !important;
+    font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "\5FAE \8F6F \96C5 \9ED1 ", SimHei, Arial, sans-serif;
+    font-size: 21.6px !important;
+    line-height: 28px !important
+}
+
+yt-live-chat-paid-message-renderer #purchase-amount,
+yt-live-chat-paid-message-renderer #purchase-amount *,
+yt-live-chat-membership-item-renderer #header-subtext,
+yt-live-chat-membership-item-renderer #header-subtext * {
+    color: #000000 !important;
+    font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "\5FAE \8F6F \96C5 \9ED1 ", SimHei, Arial, sans-serif;
+    font-size: 21.6px !important;
+    line-height: 28px !important
+}
+
+yt-live-chat-paid-message-renderer #content,
+yt-live-chat-paid-message-renderer #content * {
+    color: #000000 !important;
+    font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "\5FAE \8F6F \96C5 \9ED1 ", SimHei, Arial, sans-serif;
+    font-size: 21.6px !important;
+    line-height: 28px !important
+}
+
+yt-live-chat-membership-item-renderer #card,
+yt-live-chat-membership-item-renderer #header {
+    background-color: transparent !important;
+    margin: 0 !important
+}
+
+yt-live-chat-ticker-paid-message-item-renderer,
+yt-live-chat-ticker-paid-message-item-renderer *,
+yt-live-chat-ticker-sponsor-item-renderer,
+yt-live-chat-ticker-sponsor-item-renderer * {
+    color: #000000 !important;
+    font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "\5FAE \8F6F \96C5 \9ED1 ", SimHei, Arial, sans-serif
+}
+
+yt-live-chat-text-message-renderer {
+    overflow: visible;
+    margin: 0px 0px 0px 7px !important
+}
+
+yt-live-chat-paid-message-renderer {
+    margin: 22px 0px 0px 0px !important
+}
+
+yt-live-chat-text-message-renderer #image-and-message {
+    padding: 10px 10px 10px 10px;
+    border: 2px solid #FFFFFF;
+    border-radius: 14px;
+    background-color: #FFFFFF;
+    position: relative;
+    margin: 4px 0px 10px 9px;
+    width: fit-content
+}
+
+yt-live-chat-text-message-renderer yt-live-chat-author-chip {
+    position: relative
+}
+
+yt-live-chat-text-message-renderer #author-name::before {
+    content: "";
+    width: 24px;
+    height: 14px;
+    background-image: url("https://s2.loli.net/2022/01/07/AsewLlcB9iEy26r.png ");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left top;
+    position: absolute;
+    bottom: -18px;
+    left: -2px;
+    transform: rotate(1deg);
+    z-index: -1
+}
+
+yt-live-chat-text-message-renderer[author-type="member"] #author-name::before,
+yt-live-chat-text-message-renderer[author-type="moderator"] #author-name::before,
+yt-live-chat-text-message-renderer[author-type="owner"] #author-name::before {
+    background-image: url("")
+}
+
+yt-live-chat-text-message-renderer[is-owner="true"] #image-and-message,
+yt-live-chat-text-message-renderer[author-type="owner"] #image-and-message {
+    min-width: 40px;
+    border: 10px solid #FFFFFF;
+    border-radius: 24px !important;
+    background-color: #EDD9C4 !important;
+    box-shadow: 0 0 0 2px #7c627b;
+    margin: 16px 0px 15px 0px;
+    padding: 0px 10px 0px 10px
+}
+
+yt-live-chat-text-message-renderer[is-owner="true"] #image-and-message::before,
+yt-live-chat-text-message-renderer[author-type="owner"] #image-and-message::before {
+    content: "";
+    width: 30px;
+    height: 30px;
+    border: 0px transparent solid;
+    background-image: url("https://s2.loli.net/2022/01/07/4mVeW2IqvNM3wUF.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: -1px;
+    top: -26px
+}
+
+yt-live-chat-text-message-renderer[is-owner="true"] #image-and-message::after,
+yt-live-chat-text-message-renderer[author-type="owner"] #image-and-message::after {
+    content: "";
+    width: 30px;
+    height: 30px;
+    border: 0px transparent solid;
+    background-image: url("https://s2.loli.net/2022/01/07/uRzGTC4c7AWswoV.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    right: -1px;
+    top: -26px
+}
+
+yt-live-chat-text-message-renderer[author-type="moderator"] #author-name::after,
+yt-live-chat-text-message-renderer[author-type="member"] #author-name::after,
+yt-live-chat-text-message-renderer[author-type="owner"] #author-name::after {
+    content: "";
+    background-image: url("")
+}
+
+yt-live-chat-text-message-renderer[author-type="moderator"] #image-and-message {
+    min-width: 40px;
+    border: 10px solid #FFFFFF;
+    border-radius: 24px !important;
+    background-color: #b6dde7 !important;
+    box-shadow: 0 0 0 2px #7c627b;
+    margin: 20px 0px 15px 0px;
+    padding: 0px 10px 0px 10px
+}
+
+yt-live-chat-text-message-renderer[author-type="moderator"] #image-and-message::before {
+    content: "";
+    width: 30px;
+    height: 30px;
+    border: 0px transparent solid;
+    background-image: url("https://s2.loli.net/2022/01/07/b8Vdg4lKjcTtorU.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: -3px;
+    top: -25px
+}
+
+yt-live-chat-text-message-renderer[author-type="moderator"] #image-and-message::after {
+    content: "";
+    width: 30px;
+    height: 30px;
+    border: 0px transparent solid;
+    background-image: url("https://s2.loli.net/2022/01/07/aslNfHtuVkwMzIc.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    right: -3px;
+    top: -25px
+}
+
+yt-live-chat-text-message-renderer:not([is-owner="true"]):not([is-admin="true"])[author-type="member"] #content {
+    position: relative
+}
+
+yt-live-chat-text-message-renderer:not([is-owner="true"]):not([is-admin="true"])[author-type="member"] #image-and-message>img,
+yt-live-chat-text-message-renderer:not([is-owner="true"]):not([is-admin="true"])[author-type="member"] #message {
+    padding: 0px 10px 0px 0px !important;
+    position: relative;
+    top: -10px;
+    left: -5px
+}
+
+yt-live-chat-text-message-renderer:not([is-owner="true"]):not([is-admin="true"])[author-type="member"] #image-and-message::before {
+    content: "";
+    width: 28px;
+    height: 28px;
+    border: 0px transparent solid;
+    background-image: url("https://s2.loli.net/2022/01/07/A3nmNDcKxX81Wgs.png ");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: -34px;
+    bottom: -13px
+}
+
+yt-live-chat-text-message-renderer:not([is-owner="true"]):not([is-admin="true"])[author-type="member"] #image-and-message {
+    min-width: 50px;
+    border: 0px solid transparent;
+    background-color: transparent !important;
+    border-image-source: url("https://s2.loli.net/2022/01/07/hYkmEgerncQf9JU.png");
+    padding: 0px 10px 0px 0px !important;
+    margin: 2px 10px 10px 4px;
+    border-width: 40px 30px 2px 28px;
+    border-style: solid transparent;
+    border-image-slice: 136 102 10 97 fill
+}
+
+yt-live-chat-text-message-renderer:not([is-owner="true"]):not([is-admin="true"])[author-type="member"] #image-and-message::after {
+    content: "";
+    width: 70px;
+    height: calc(100% + 52px);
+    border: 0px transparent solid;
+    background-image: url("https://s2.loli.net/2022/01/07/FMowyizWqSdsJur.png "), url("https://s2.loli.net/2022/01/07/7vXfndWI5wNZeLG.png ");
+    background-size: contain, 49.2px 26.4px;
+    background-repeat: no-repeat, no-repeat;
+    background-position: top center, 80% 100%;
+    position: absolute;
+    left: calc(100% - 26px);
+    bottom: -8px
+}
+
+yt-live-chat-text-message-renderer:not([is-owner="true"]):not([is-admin="true"])[privilegetype="3"] #author-photo {
+    overflow: visible !important
+}
+
+yt-live-chat-text-message-renderer:not([is-owner="true"]):not([is-admin="true"])[privilegetype="3"] #author-photo::after {
+    content: "";
+    width: 94px;
+    height: 80px;
+    border: 0px transparent solid;
+    background-image: url("https://s2.loli.net/2022/01/07/KfhwMiCvDWysNER.png ");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: -17px;
+    top: 14px;
+    z-index: 1
+}
+
+yt-live-chat-text-message-renderer:not([is-owner="true"]):not([is-admin="true"])[privilegetype="2"] #author-photo::after {
+    content: "";
+    width: 94px;
+    height: 80px;
+    border: 0px transparent solid;
+    background-image: url("https://s2.loli.net/2022/01/07/SDTFsHmh6wlqgOo.png ");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: -17px;
+    top: 15px;
+    z-index: 1
+}
+
+yt-live-chat-text-message-renderer:not([is-owner="true"]):not([is-admin="true"])[privilegetype="1"] #author-photo::after {
+    content: "";
+    width: 94px;
+    height: 80px;
+    border: 0px transparent solid;
+    background-image: url("https://s2.loli.net/2022/01/07/7JyHbs4uWDrPCjS.png ");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: -17px;
+    top: 15px;
+    z-index: 1
+}
+
+#chat-badges,
+#header-subtext {
+    display: none
+}
+
+#header-content-inner-column::after {
+    content: "加入大航海";
+    display: block;
+    font-size: 26px !important;
+    line-height: 28px !important;
+    padding: 10px 0px 20px 0px;
+    position: relative;
+    left: 14px
+}
+
+yt-live-chat-membership-item-renderer {
+    margin: 12px 0px 32px 0px
+}
+
+yt-live-chat-membership-item-renderer:not([is-owner="true"]):not([is-admin="true"])[privilegetype="1"] #card {
+    overflow: visible !important;
+    position: relative;
+    border: 1px solid #fdf5f7;
+    border-radius: 50px 50px 10px 10px;
+    background-color: #f1f4f8 !important;
+    box-shadow: 7px -5px 0px 1px rgba(197, 63, 61, 1)
+}
+
+yt-live-chat-membership-item-renderer:not([is-owner="true"]):not([is-admin="true"])[privilegetype="1"] #card::before {
+    content: "";
+    width: calc(100% - 0px);
+    height: 50px;
+    border: 0px transparent solid;
+    background-image: url("https://s2.loli.net/2022/01/07/uiC5MTHPnv8tgdL.png ");
+    background-size: 465px 29px;
+    background-repeat: repeat-x;
+    position: absolute;
+    left: -15px;
+    bottom: -30px;
+    z-index: 1
+}
+
+yt-live-chat-membership-item-renderer:not([is-owner="true"]):not([is-admin="true"])[privilegetype="1"] #card::after {
+    content: "";
+    width: 60px;
+    height: 60px;
+    border: 0px transparent solid;
+    background-image: url("https://s2.loli.net/2022/05/06/ygKp58f6SNqCsMF.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    right: -20px;
+    bottom: -16px;
+    z-index: 2
+}
+
+yt-live-chat-membership-item-renderer:not([is-owner="true"]):not([is-admin="true"])[privilegetype="2"] #card {
+    overflow: visible !important;
+    position: relative;
+    border: 1px solid #f8f9ff;
+    border-radius: 50px 50px 10px 10px;
+    background-color: #f1f4f8 !important;
+    box-shadow: 7px -5px 0px 1px rgba(114, 95, 181, 1)
+}
+
+yt-live-chat-membership-item-renderer:not([is-owner="true"]):not([is-admin="true"])[privilegetype="2"] #card::before {
+    content: "";
+    width: calc(100% - 0px);
+    height: 50px;
+    border: 0px transparent solid;
+    background-image: url("https://s2.loli.net/2022/01/07/sTuJa9KIdYyqXci.png ");
+    background-size: 465px 29px;
+    background-repeat: repeat-x;
+    position: absolute;
+    left: -15px;
+    bottom: -30px;
+    z-index: 1
+}
+
+yt-live-chat-membership-item-renderer:not([is-owner="true"]):not([is-admin="true"])[privilegetype="2"] #card::after {
+    content: "";
+    width: 60px;
+    height: 60px;
+    border: 0px transparent solid;
+    background-image: url("https://s2.loli.net/2022/05/06/caO9lxuNfQ3HqCk.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    right: -20px;
+    bottom: -16px;
+    z-index: 2
+}
+
+yt-live-chat-membership-item-renderer:not([is-owner="true"]):not([is-admin="true"])[privilegetype="3"] #card {
+    overflow: visible !important;
+    position: relative;
+    border: 1px solid #f1f4f8;
+    border-radius: 50px 50px 10px 10px;
+    background-color: #f1f4f8 !important;
+    box-shadow: 7px -5px 0px 1px rgba(105, 129, 185, 1)
+}
+
+yt-live-chat-membership-item-renderer:not([is-owner="true"]):not([is-admin="true"])[privilegetype="3"] #card::before {
+    content: "";
+    width: calc(100% - 0px);
+    height: 50px;
+    border: 0px transparent solid;
+    background-image: url("https://s2.loli.net/2022/01/07/PH6eJiVKRlma4F5.png ");
+    background-size: 465px 29px;
+    background-repeat: repeat-x;
+    position: absolute;
+    left: -15px;
+    bottom: -30px;
+    z-index: 1
+}
+
+yt-live-chat-membership-item-renderer:not([is-owner="true"]):not([is-admin="true"])[privilegetype="3"] #card::after {
+    content: "";
+    width: 60px;
+    height: 60px;
+    border: 0px transparent solid;
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEIAAABCCAYAAADjVADoAAARaUlEQVR4nO1bCXRUVZr+qlJrUnsSUqmQhGxkqUAiMSwBAoSAzRJoFbAVl7FnxDnTetoZsUfttmfsdtf2qKOiti023SgIKCAqjMomBAwmEElCwGxV2VOVpCpVqdTyqt6c+ypVqUotSSDQZ87Jd8499eq9+/7/3u/+97/3/vc+TGEKU5jCFMYG6x/FkVq9dBVYrLs4HE62UMjnmM2WXpqmq5xO57v1l0423Ojy3HAisrKL02Uyyd5Va1fk/eKO9UhMSmDum2w2VFZcwL7dB3G2/Nzfadr1n3W1JzpudPluCHLUS+eXlN5luNzQQjtdLiZZ7A4m9VuGmNRtMtN7Dxyh5y9YeyEra5HoRpXtulsEqUwEh7MaYJXFKePLdu58XTotNtovj41yDv9SsDvd18Q6nnj0D01Op+Nrl4v+sK72+NnrWU7O9RJMugCHE7F1Wlz8LwrnF0n1PVqsWrMco0kIhdyCWfjZmpJUsEQPWiyGB2WKaM2AofdPLhe97/9FlyEEqHOXvbzxrkfp7buP07UaM11xqZf++W0PeruDb6r44UemK5Du4ukaJGkNRvpii5Ymcsj71Y1G+rV3PqNJ1yLyJ7vbREymsNxZSx9Wxifs+s3vny7ZeOcGRHB4KK9qw9HDFVApWVhestAv/9vbduDd9w+jqXUI+/buQUZOGmKHLcZJ04jgcLH34wMYsClhtVO4uTAXa36+TqCImVbU1Ni0WSKOu6zTtUzKCDMpRBArUMan7Vmz/vZ/e+ypJwU8vgDfndPg4sUuDJpsMBi6kDlDitk35YLDZnvfe+rpN1BQvAnyGBXk0TNQd/40ipfNh23YT7hcNCpOnUGkOAXGATvqL3d7CSlZeYtMp+vbbLeyRNGK6Wf0eq39WupwzT6CjAQyRfSuh7c+njw7Pxtnf2hBQ4MuZH6PYyRwOaxwWK3gCgSw24YgFo4Ux+GTzxdENkk358fj0ScexeefZW39+MP3l+Wol6y7Ft9xTRZBJkXKeNX+/3rxpTilSomvDv+Irm5zQD6nzQ6bpR0LFs31swiZQop9u3ZA39kOXXslHnniYfAjhcwzYg0Eu3d+jsT0ggCZHV1mWKwOLFlSgOS0DNW58jO3yuUJX+r1mr6rqctVD5/EEpTxqsN/eOVPUvL/iyP1TOuGQvX3n+D97S9BIvb3cQMmM/SGAcTGxXjveaxB26TBH598F3MWrw8pVxEdhdLlamibNXj1+Wc1hj590dVYxlVZBPEJ8aqEk7999jkph8PB/gMX4KKosO8MmQdh6G/HrHw14wg9icPlMuSQawyTwOVEMBaxfdtHkCjUEERGhZY75EBnlwE3zclAYvIM2bny8qVymeqjifqMCRNBhi2+QHj6d888F6+IUeCLQ5UI0Z39IJbG4Oypb5CVm+EdGYhT9BACHxIIDh84gnPntEhIUY8p20PGkiX5EERKVDXV56N7eloOTaReEyZCGZ/2xuZfblmRmz8bB/dXwDxog8vlDJvAF0MgVyFamYl9f3sPsdFSJKck+REQwWYzVkDSjm078PX/1iKv5F5ECCSgKApO22BYHYPmIVgGrVi5ahG0ms6b7UOomMjQOiEiiF/ImV2w7cGHtuDM6Xp0dhm9z1obq6G5cgFmkx4iSTQzB+Bw+QwJ/T0/oUdTh9bL5+C0G2AZcmDuvDywOBFef+Bxjobefnzz1TEYjH3oaq7HkEkHHpsFrjgWNGUNqYugt8+MqCgeFi9diOPffLtWKo3bodNpTOOp24ScZV7+ysZnX30tlcvj48CBihESmqqRkyXDpns3oqL8HP763j6ay41kCURsJE2PxeJFhUhOno6srHRI5TLvmsJsC+zGpGvwIyLAi4hAU2sHBrp6UFNzGWcrqqDV6uGwOuhVaxex1m5Yy+j6aMdBzLq5zPt+pEiGTZvmovzESbz/1hvv1lw89q+TSoQ6d+mmeYuW7f71Y49gzyfl6OszMPcdVjtaGo/jLx+9BjGPBz6Hg1ZtOyTiKKbSvvBdVAUjYTQZBIQQItMDY7/Bj8xXX3gTLR0cRMckePPk5qZg4aJsbH34EbRrmheMZ8HGHiuDBxwO7/nN99+HhoZOLwkEffoWrFhZxFyTgpG4wjRVHARiEVNY8t+b7HaGgHAkYNhnkDzEmZJ3PO8TeR65RBd5vu6OddC1+ruCmppmmEwWrFm3DiwW6/bx1G9cRBDfMDNnVqpSGYPzVc1+z8wmA1JTkgILP5w8FScp1GwxHCEeuST5yiV6yDOJRASHfcid3zpC8I/VGhQtKUacMv6B8SzQxjXFZrFYv1q9vgxdXXp0d/T4PePx+WhoNkCSaIfd7oLdQcNidTs+i9UVIIvLIYmNSAELPC4Lokg22ropGExuksi9YO+4f/3bjcjo7xnwI8HzS6yCdA8SAji0v2MjgO3h6jimRRA2RWJpWUZmJn680BzwPFISgyv19cw1IcEDBxWeBAKZJAKJKp73/2gZI7I8v/4yCeFNDTWIlCgC37HamW5cWFQEFot991j1HNMi2BGc3OSMbKlcLsZPDV1w2P2n0UKeGD9droKm9gqiZ6Shv6cfn338HoQ8Lmbk3Ay5LAGxiUoIIyOZ/B5LiIvlQCENVB/MIhxWE7p0rejStEDfqcGCFRsRq5yGIYsFJw8fRFLSvIByEWhbOlFSOgdRIkngYmXCRLBRmJE5E/39JlgGBoLmSZu5BDs+eAfxicno13chbc5KyMVKNNVXorL1BCyDvbRYLmIlJs1AfGISbttQDJlUHpKAQYMeP9VUMJXubNUATi64PCGS1QVImFmETz94hdFFnqkXlsGqC14u0nAlpUBSSprUNLB0frjRY0wiaJo1Nz09BV0dnSHzyBNVKCt5Gn3tTYiSx4AfKWHuS9q0EKaJySWLLMiMRgPqqr+kb9tQHHbY1jZeQn3lBcQnZCNt5gzvfak4FvEZWSjLeBoDulbMWiZldLX88EPQRiL3yOgxU52LSxcrCwFcPRFk30GVkIi6Wm3I1aVY4V47KBJSvffMvTpYBgx++QQ8GchEayydBFyBeznuq9Og64YK7rWHJDbRe18ao4SxpyeIFKC724gZSWmkLcIuWsZ0lgJhVLo8WgaraWSmSgIpvr+i6FhweGy/ZOrrDcgfCsH8wmgQGYQUQvBoXVwxP2TZ7FYT5NEi0DRCL2HHQwQLXElUJB+DgyMt42klzy8pzGjYjOaA/NcCr06TLZAkIT9Al+fXPDAEgZsUeTj1YxLBFYyjuYLAd3LjC4fDEjg+Bn1/KOh9qyMwAjYWyNqIxWIJw2Ub00eQRY5nTWIPUjieQAhOCK6C5Q8Frk9JOMMTp1DvB9M3EV3BMKZF0HAEH5vGKABXwLumgoUCPzJQrmMosLv4PbfbQNN0WKbGJMI6ZOklc4ioqNAOz2G3BNyTxAfO9kKBRxweZySFAxmeR8PlCu2DRBIhTKZBctkfTu441hp0f6umDTFxMlC24Ar7O3qgmpnidy92RgIunzwzLiJCYbS+SKkc0QmBBPdpukOWTSyOQs2PF8llVzhdY1oERVHHujvbkJQyst43mv1lkoKMhlAUhfiMzLFrOwFMz00Omtl3DmGzWZhEwOELIFPIh9dCdF04TeNYhtPnOtvaoYyP8SpyOAfQ2V1LexTqtBo4bAMB4/uMggymMJMBIic5L89dQZ/h2tzXC4vRbfWkgWxUK3p07kVgXJwUZI3Uqm0hPuLINRHhdLqqyk+XM9cJSXEwDXajaPUmPP/6kyyiVN/XzJhlR33gylSmjEXavJsmTAOZYHliDB7Mv2Otl2AMk0HSpTPnmcYhDZOSKsFrf34RC4rnMqQkJCUwa6SejvamsfY6xiSCHOMZ6NdVtmrakVeoxpClH0plErgiFV568xmU3jIHrW1VuHDiRND3U+dkYebCfK/JUg7buOclHotTlxZDrBAHPDd06dBw/hRjBfdtuZ315HOPg82LhECRxhA5Z74ap46fBEU5ysfSNa7ADEVRn3139GjB7ZvvhFAsgiwmBj29FPKy5bj7wXtQWrYCB3cfxJ6X/hs5i5ciNTcfQvFIvDKt0G0VV05fCKnDNybhQZREgcJbSxnL8sBhH4S2+gpqvz8KjsuGu+5fheJbSiEYtpT2Lgqq5ExExxzH9MQ4vP92BekWb00KETTt2n78228eK9twu1QaHcMMcUazE1a7iykA2ffc8u9bmFA8iSyf2vsXGAeBuSWrMT3fvdbJXFgAVVYKDm3TBMjnBSlFUlY6ijasg1A0Ygmfv/s/iIQVeTfNwqO/uR9JqYHOkzQQaSiC5kYtrtRdbJq04C3pX2aT8RQxM18Q9n0hi5Zjza2r8Oa2F7Fh3WJoNJf8noujFRDFxgbREIiYlCQ/Ejz49cP/gge23I20makBzzp7HH7hwSOHPgVF2Z8Zj75xR7GdTucj+3fvpW0W9yqUWEV7t52xCl+QMHxPRzd27voS81bdNl7x48LSDZvx3HNvMfLJ1oFne9CDlnYHM1Wn7FZ0dfbRJ4+ebHJS1J5JJYI4TbNZ/15/T6/f/dFWQXDg0Newml0YaGkPKovH54bVJeYH96dt1XVMBY2GAb+9DoyyBmO/HmZzL4tYQ339qXGt0iZ0UIRyOLY6IqwrbAOGVL5E5rWKGHkEpGJ365Aw+33/fCeEXC7++uYLmLt8NdTLi4OaubcQHFbYmMSQ2YSv3nsHxBrf+vAFVnZKErO34QGxSo81EOh0zATraG3N8bCRa78yjJsFYhX1p8zq3GWftne3bU2VjIwKdQ023KQWMI7Ts3ex6d4NKCpdjE927MH+115mfINCGQ+zLvRpGl80VlZCW1/L5Cfbhv90zxosX1HM5PBs8Hh0XW60MdbgiZL3dbSAdrlemUjdruLoEF1HosmpGbnMP6KYhNlJYfKyh8NrwwUkhz/+4/GHvPuY3W2dsBTlQCqTht3sKVwwD7NnJSBuejxSE1XebULPr82HhEatHXqD028Z39naBBp09URqNeFjAdGK6Q2UY+jJ/AUl6GrX4tt9HyAhTQ0XuLAMuRCrcJfIs8VPs9wVUEjFUCUooUxKCCDBPOiCi2YhIsKdVAkCKBOmQSwRMe/6HiyxOijvznlrhx2NrXb8VH0a1d8fgyJ2OthsFk5/tav6fNXXL0+kXlcVfcqdVfLttDhlQa9e35uSmpJKsflYf89D4PAEkIoikJnG905wxgO3o3NXztffhMOlBis6dBQT+ifhfYGQj56OtkoSYzWbjC/X1hx79roT4QHZBeNweQcEfFFJ5pxClN56H/OEdJecdP64KkTQZ6QwOOhinGb8tPAjitHkZHwS8Qlk42fX288yeyk0Tb9SW3PssautyzWdqiPnlHp6mnfIFSpRd1tLkcVsRGp2PmO63XoKhgEneDwWhILw1jFkc5Eoc1gSCFlXmm1o0JLNZJohYf/2V6Draicz31/W1hx/6VrqMmmH0tW5S+/ncHi/y5xdkLqk7G5EDg+XZN+SODLSZURREd41BZ/PQqSQzXQh0srkP/ExNpu7i1AUDTvlnjKP3kz2dIeBfn2Tw2HfPBkH1if1dH6OeomKxWK/qIiNv3v9fQ8hOm6695kjxKG7nDQ+5LIIZtQh3n8sNNZX4cSnO2mTSf+Uk3K8Pt4J01i4Lp8pkPMUXC5v59xlq1OLVvpPs4MREilgBz1C4AuWy4qv921HbdXZvzudzqcn+yuf6/q9hjp32W+lcsUDy9ZuTE6fXeT3LJSFjAYh4Hz5UZw+8mkTRdmfqK05/sn1KOt1/3CFdBc2m/178t1G3qI10nR1vtd/hINBr0dd1UnU/vCdxtjf9+eJDocTxQ37psvtP1i3cDjcXyWmZxdk5y9gAijknIPnAEhvdxsuV1eg5XI1OrQtX4Cm33I6qe8myw+Ewz/kKz/31z3sVTTNukUqV+RGiSXJJK7oDqnRnzsp6ssbUfkpTGEKU5jCFK4CAP4Pk3elqY5Q+cwAAAAASUVORK5CYII=");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    right: -20px;
+    bottom: -16px;
+    z-index: 2
+}
+
+#card.yt-live-chat-paid-message-renderer {
+    -webkit-box-shadow: 0 0px 0px #000;
+    box-shadow: 0 0px 0px #000
+}
+
+yt-live-chat-paid-message-renderer #header,
+yt-live-chat-paid-message-renderer #content {
+    background-color: transparent !important
+}
+
+yt-live-chat-paid-message-renderer,
+yt-live-chat-paid-message-renderer #card {
+    overflow: visible !important
+}
+
+yt-live-chat-paid-message-renderer #header {
+    padding: 0px 16px 8px 16px !important
+}
+
+yt-live-chat-paid-message-renderer #author-photo {
+    position: relative;
+    top: -6px;
+    left: -22px
+}
+
+yt-live-chat-paid-message-renderer #header-content {
+    position: relative;
+    top: -3px;
+    left: -20px
+}
+
+yt-live-chat-paid-message-renderer[price-level] #content::before {
+    content: "";
+    width: 60px;
+    height: 60px;
+    border: 0px transparent solid;
+    background-image: url("https://s2.loli.net/2022/01/07/WVAbzyOTi6KaLQp.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 35px;
+    right: 62px;
+    z-index: 2
+}
+
+yt-live-chat-paid-message-renderer[price-level="0.1"] #card {
+    overflow: visible !important;
+    border: 0px solid transparent;
+    background-color: transparent !important;
+    border-image-source: url("https://s2.loli.net/2022/01/07/U3YDSTEzHQ7CLZc.png");
+    padding: 0px !important;
+    margin: 2px 0px 16px 4px;
+    border-width: 30px;
+    border-style: solid transparent;
+    border-image-slice: 60 60 60 60 fill
+}
+
+yt-live-chat-paid-message-renderer[price-level="0.1"] #content::after {
+    content: "";
+    width: calc(100% - 53px);
+    height: calc(100% - 33px);
+    border: 0px transparent solid;
+    background-image: url("https://s2.loli.net/2022/01/07/rxQWEfRPCcNstFX.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 16px;
+    bottom: 15px;
+    z-index: -1
+}
+
+yt-live-chat-paid-message-renderer[price-level="0.1"] #card::before {
+    content: "";
+    width: 40px;
+    height: 40px;
+    border: 0px transparent solid;
+    background-image: url("https://s2.loli.net/2022/01/07/aBEnULWDGJKvQdN.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: -13px;
+    left: 45px;
+    z-index: 2
+}
+
+yt-live-chat-paid-message-renderer[price-level="0.1"] #card::after {
+    content: "";
+    width: 40px;
+    height: 40px;
+    border: 0px transparent solid;
+    background-image: url("https://s2.loli.net/2022/01/07/xvQHMlbS3wtIrVj.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: -13px;
+    right: 43px;
+    z-index: 2
+}
+
+yt-live-chat-paid-message-renderer #content {
+    border: 1px solid #c8d1e5;
+    border-radius: 22px !important;
+    background-color: #c8d1e5 !important
+}
+
+yt-live-chat-paid-message-renderer[price-level="1"] #card {
+    overflow: visible !important;
+    border: 0px solid transparent;
+    background-color: transparent !important;
+    border-image-source: url("https://s2.loli.net/2022/01/07/FsnTcz6Yq35dXo9.png");
+    padding: 0px !important;
+    margin: 2px 0px 16px 4px;
+    border-width: 30px;
+    border-style: solid transparent;
+    border-image-slice: 60 60 60 60 fill
+}
+
+yt-live-chat-paid-message-renderer[price-level="1"] #content::after {
+    content: "";
+    width: calc(100% - 53px);
+    height: calc(100% - 33px);
+    border: 0px transparent solid;
+    background-image: url("https://s2.loli.net/2022/01/07/rxQWEfRPCcNstFX.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 16px;
+    bottom: 15px;
+    z-index: -1
+}
+
+yt-live-chat-paid-message-renderer[price-level="1"] #card::before {
+    content: "";
+    width: 40px;
+    height: 40px;
+    border: 0px transparent solid;
+    background-image: url("https://s2.loli.net/2022/01/07/YHuB6MUpvi7ryxg.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: -13px;
+    left: 45px;
+    z-index: 2
+}
+
+yt-live-chat-paid-message-renderer[price-level="1"] #card::after {
+    content: "";
+    width: 40px;
+    height: 40px;
+    border: 0px transparent solid;
+    background-image: url("https://s2.loli.net/2022/01/07/wl5cXeZx2DmT9hI.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: -13px;
+    right: 43px;
+    z-index: 2
+}
+
+yt-live-chat-paid-message-renderer[price-level="1"] #content {
+    border: 1px solid #cce8eb;
+    border-radius: 22px !important;
+    background-color: #cce8eb !important
+}
+
+yt-live-chat-paid-message-renderer[price-level="30"] #card {
+    overflow: visible !important;
+    border: 0px solid transparent;
+    background-color: transparent !important;
+    border-image-source: url("https://s2.loli.net/2022/01/07/DyI7gndWv5l8uxb.png");
+    padding: 0px !important;
+    margin: 2px 0px 16px 4px;
+    border-width: 30px;
+    border-style: solid transparent;
+    border-image-slice: 60 60 60 60 fill
+}
+
+yt-live-chat-paid-message-renderer[price-level="30"] #content::after {
+    content: "";
+    width: calc(100% - 53px);
+    height: calc(100% - 33px);
+    border: 0px transparent solid;
+    background-image: url("https://s2.loli.net/2022/01/07/4K5MYycbueJnd7o.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 16px;
+    bottom: 15px;
+    z-index: -1
+}
+
+yt-live-chat-paid-message-renderer[price-level="30"] #card::before {
+    content: "";
+    width: 40px;
+    height: 40px;
+    border: 0px transparent solid;
+    background-image: url("https://s2.loli.net/2022/01/07/cIzoqVJCYm5MDn7.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: -13px;
+    left: 45px;
+    z-index: 2
+}
+
+yt-live-chat-paid-message-renderer[price-level="30"] #card::after {
+    content: "";
+    width: 40px;
+    height: 40px;
+    border: 0px transparent solid;
+    background-image: url("https://s2.loli.net/2022/01/07/IZk34BjKsixgUNd.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: -13px;
+    right: 43px;
+    z-index: 2
+}
+
+yt-live-chat-paid-message-renderer[price-level="30"] #content {
+    border: 1px solid #eff0b5;
+    border-radius: 22px !important;
+    background-color: #eff0b5 !important
+}
+
+yt-live-chat-paid-message-renderer[price-level="50"] #card {
+    overflow: visible !important;
+    border: 0px solid transparent;
+    background-color: transparent !important;
+    border-image-source: url("https://s2.loli.net/2022/01/07/PhRiWeQ7DMLZJv9.png");
+    padding: 0px !important;
+    margin: 2px 0px 16px 4px;
+    border-width: 30px;
+    border-style: solid transparent;
+    border-image-slice: 60 60 60 60 fill
+}
+
+yt-live-chat-paid-message-renderer[price-level="50"] #content::after {
+    content: "";
+    width: calc(100% - 53px);
+    height: calc(100% - 33px);
+    border: 0px transparent solid;
+    background-image: url("https://s2.loli.net/2022/01/07/39B7oGn1cwljhvA.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 16px;
+    bottom: 15px;
+    z-index: -1
+}
+
+yt-live-chat-paid-message-renderer[price-level="50"] #card::before {
+    content: "";
+    width: 40px;
+    height: 40px;
+    border: 0px transparent solid;
+    background-image: url("https://s2.loli.net/2022/01/07/QmlOnUI2BDT3VJ4.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: -13px;
+    left: 45px;
+    z-index: 2
+}
+
+yt-live-chat-paid-message-renderer[price-level="50"] #card::after {
+    content: "";
+    width: 40px;
+    height: 40px;
+    border: 0px transparent solid;
+    background-image: url("https://s2.loli.net/2022/01/07/6CfVHyr7kOl23Uj.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: -13px;
+    right: 43px;
+    z-index: 2
+}
+
+yt-live-chat-paid-message-renderer[price-level="50"] #content {
+    border: 1px solid #f8dcba;
+    border-radius: 22px !important;
+    background-color: #f8dcba !important
+}
+
+yt-live-chat-paid-message-renderer[price-level="100"] #card {
+    overflow: visible !important;
+    border: 0px solid transparent;
+    background-color: transparent !important;
+    border-image-source: url("https://s2.loli.net/2022/01/07/XqmQN5bVrJDMxT1.png");
+    padding: 0px !important;
+    margin: 2px 0px 16px 4px;
+    border-width: 30px;
+    border-style: solid transparent;
+    border-image-slice: 60 60 60 60 fill
+}
+
+yt-live-chat-paid-message-renderer[price-level="100"] #content::after {
+    content: "";
+    width: calc(100% - 53px);
+    height: calc(100% - 33px);
+    border: 0px transparent solid;
+    background-image: url("https://s2.loli.net/2022/01/07/oELDOlVFqW2iIka.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 16px;
+    bottom: 15px;
+    z-index: -1
+}
+
+yt-live-chat-paid-message-renderer[price-level="100"] #card::before {
+    content: "";
+    width: 40px;
+    height: 40px;
+    border: 0px transparent solid;
+    background-image: url("https://s2.loli.net/2022/01/07/Y1efpMDOVXWH4tT.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: -13px;
+    left: 45px;
+    z-index: 2
+}
+
+yt-live-chat-paid-message-renderer[price-level="100"] #card::after {
+    content: "";
+    width: 40px;
+    height: 40px;
+    border: 0px transparent solid;
+    background-image: url("https://s2.loli.net/2022/01/07/aTyK5zoc7OLiuH6.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: -13px;
+    right: 43px;
+    z-index: 2
+}
+
+yt-live-chat-paid-message-renderer[price-level="100"] #content {
+    border: 1px solid #ecc1d4;
+    border-radius: 22px !important;
+    background-color: #ecc1d4 !important
+}
+
+yt-live-chat-paid-message-renderer[price-level="1000"] #card {
+    overflow: visible !important;
+    border: 0px solid transparent;
+    background-color: transparent !important;
+    border-image-source: url("https://s2.loli.net/2022/01/07/WlZnjQKuqpbNcf5.png");
+    padding: 0px !important;
+    margin: 2px 0px 16px 4px;
+    border-width: 30px;
+    border-style: solid transparent;
+    border-image-slice: 60 60 60 60 fill
+}
+
+yt-live-chat-paid-message-renderer[price-level="1000"] #content::after {
+    content: "";
+    width: calc(100% - 53px);
+    height: calc(100% - 33px);
+    border: 0px transparent solid;
+    background-image: url("https://s2.loli.net/2022/01/07/MXOi938qbmhIrpD.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 16px;
+    bottom: 15px;
+    z-index: -1
+}
+
+yt-live-chat-paid-message-renderer[price-level="1000"] #card::before {
+    content: "";
+    width: 40px;
+    height: 40px;
+    border: 0px transparent solid;
+    background-image: url("https://s2.loli.net/2022/01/07/AkguImQfXJehGSi.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: -13px;
+    left: 45px;
+    z-index: 2
+}
+
+yt-live-chat-paid-message-renderer[price-level="1000"] #card::after {
+    content: "";
+    width: 40px;
+    height: 40px;
+    border: 0px transparent solid;
+    background-image: url("https://s2.loli.net/2022/01/07/bu7KLNvlRrDsmZ2.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: -13px;
+    right: 43px;
+    z-index: 2
+}
+
+yt-live-chat-paid-message-renderer[price-level="1000"] #content {
+    border: 1px solid #f2b1af;
+    border-radius: 22px !important;
+    background-color: #f2b1af !important
+}
+
+yt-live-chat-paid-message-renderer[giftname="superchat"] #message {
+    display: inline;
+    line-height: 38px !important
+}
+
+yt-live-chat-paid-message-renderer[giftname="superchat"] #content::before {
+    content: "";
+    background-image: url("")
+}
+
+yt-live-chat-paid-message-renderer[giftname="superchat"] #content,
+yt-live-chat-paid-message-renderer[giftname="superchat"] #message {
+    margin: 0px !important;
+    padding: 0px !important;
+    width: 85%
+}
+
+yt-live-chat-paid-message-renderer[giftname="superchat"] #purchase-amount::after {
+    content: " | SuperChat";
+    word-break: break-all;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    top: 0px
+}
+
+yt-live-chat-paid-message-renderer[giftname="superchat"] #message {
+    position: relative !important;
+    left: 10%
+}
+
+yt-live-chat-paid-message-renderer[giftname="superchat"][price-level="1"] #content {
+    border: 0px solid #f2b1af;
+    background-color: transparent !important
+}
+
+yt-live-chat-paid-message-renderer[giftname="superchat"][price-level="1"] #message {
+    margin: 0px;
+    width: fit-content;
+    border: 0px solid #f2b1af;
+    background-color: transparent !important;
+    border-image-source: url("https://s2.loli.net/2022/01/07/7v6XeYWq4gbZBHP.png");
+    padding: 0px !important;
+    margin: 2px 0px 10px 4px;
+    border-width: 20px 10px 20px 0px;
+    border-style: solid transparent;
+    border-image-slice: 72 34 72 34;
+    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 50%, rgba(204, 232, 235, 1) 50%, rgba(204, 232, 235, 1) 99.5%, rgba(111, 189, 224, 1) 99.8%);
+    background-size: 200%;
+    background-position: 0 0;
+    background-clip: padding-box;
+    -webkit-animation: naomi-sc-text-select cubic-bezier(.59, .03, .05, 1.05) 0.8s;
+    animation: naomi-sc-text-select cubic-bezier(.59, .03, .05, 1.05) 0.8s;
+    animation-delay: 400ms;
+    animation-fill-mode: both;
+    overflow: hidden
+}
+
+yt-live-chat-paid-message-renderer[giftname="superchat"][price-level="1"] #message::before {
+    content: "";
+    width: 30px;
+    height: 21px;
+    border: 0px transparent solid;
+    background-image: url("https://s2.loli.net/2022/01/07/EpURsmt7QYf9xnb.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: -19px;
+    left: -4px;
+    z-index: 2
+}
+
+yt-live-chat-paid-message-renderer[giftname="superchat"][price-level="30"] #content {
+    border: 0px solid #f2b1af;
+    background-color: transparent !important
+}
+
+yt-live-chat-paid-message-renderer[giftname="superchat"][price-level="30"] #message {
+    margin: 0px;
+    width: fit-content;
+    border: 0px solid #f2b1af;
+    border-image-source: url("https://s2.loli.net/2022/01/07/Htq4JjF3ZrBxfuk.png");
+    padding: 0px !important;
+    margin: 2px 0px 10px 4px;
+    border-width: 20px 10px 20px 0px;
+    border-style: solid transparent;
+    border-image-slice: 72 34 72 34;
+    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 50%, rgba(239, 240, 181, 1) 50%, rgba(239, 240, 181, 1) 99.5%, rgba(196, 184, 105, 1) 99.8%);
+    background-size: 200%;
+    background-position: 0 0;
+    background-clip: padding-box;
+    -webkit-animation: naomi-sc-text-select-30 cubic-bezier(.59, .03, .05, 1.05) 0.8s;
+    animation: naomi-sc-text-select-30 cubic-bezier(.59, .03, .05, 1.05) 0.8s;
+    animation-delay: 400ms;
+    animation-fill-mode: both;
+    overflow: hidden
+}
+
+yt-live-chat-paid-message-renderer[giftname="superchat"][price-level="30"] #message::before {
+    content: "";
+    width: 30px;
+    height: 21px;
+    border: 0px transparent solid;
+    background-image: url("https://s2.loli.net/2022/01/07/jJcWuU6AYo7mbh3.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: -19px;
+    left: -4px;
+    z-index: 2
+}
+
+yt-live-chat-paid-message-renderer[giftname="superchat"][price-level="30"] #purchase-amount {
+    width: fit-content;
+    white-space: nowrap;
+    border: 1px solid #dddddd;
+    border-radius: 22px !important;
+    background-color: #d0c687;
+    padding: 6px 28px 6px 32px;
+    margin: 0px 0px 20px 0px;
+    position: relative;
+    opacity: 0%;
+    -webkit-animation: naomi-sc-scale-in-ease cubic-bezier(.3, -0.02, .29, 1.24) 1.0s;
+    animation: naomi-sc-scale-in-ease cubic-bezier(.3, -0.02, .29, 1.24) 0.4s;
+    animation-delay: 1000ms;
+    animation-fill-mode: forwards
+}
+
+yt-live-chat-paid-message-renderer[giftname="superchat"][price-level="30"] #purchase-amount::before {
+    content: '';
+    display: block;
+    position: absolute;
+    border-top: 5px solid #fff;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    bottom: -9px;
+    left: 8%;
+    border-top: 10px solid #d0c687;
+    border-left: 2px solid transparent;
+    border-right: 10px solid transparent
+}
+
+yt-live-chat-paid-message-renderer[giftname="superchat"][price-level="50"] #content {
+    border: 0px solid #f2b1af;
+    background-color: transparent !important
+}
+
+yt-live-chat-paid-message-renderer[giftname="superchat"][price-level="50"] #message {
+    margin: 0px;
+    width: fit-content;
+    border: 0px solid #f2b1af;
+    background-color: transparent !important;
+    border-image-source: url("https://s2.loli.net/2022/01/07/Nc6ILmPUSDbYQ1s.png");
+    padding: 0px !important;
+    margin: 2px 0px 10px 4px;
+    border-width: 20px 10px 20px 0px;
+    border-style: solid transparent;
+    border-image-slice: 72 34 72 34;
+    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 50%, rgba(248, 220, 186, 1) 50%, rgba(248, 220, 186, 1) 99.5%, rgba(213, 135, 85, 1) 99.8%);
+    background-size: 200%;
+    background-position: 0 0;
+    background-clip: padding-box;
+    -webkit-animation: naomi-sc-text-select-50 cubic-bezier(.59, .03, .05, 1.05) 0.8s;
+    animation: naomi-sc-text-select-50 cubic-bezier(.59, .03, .05, 1.05) 0.8s;
+    animation-delay: 400ms;
+    animation-fill-mode: both;
+    overflow: hidden
+}
+
+yt-live-chat-paid-message-renderer[giftname="superchat"][price-level="50"] #message::before {
+    content: "";
+    width: 30px;
+    height: 21px;
+    border: 0px transparent solid;
+    background-image: url("https://s2.loli.net/2022/01/07/ug3WRQIlkJPGD6F.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: -19px;
+    left: -4px;
+    z-index: 2
+}
+
+yt-live-chat-paid-message-renderer[giftname="superchat"][price-level="50"] #purchase-amount {
+    width: fit-content;
+    white-space: nowrap;
+    border: 1px solid #dddddd;
+    border-radius: 22px !important;
+    background-color: #dd9f77;
+    padding: 6px 28px 6px 32px;
+    margin: 0px 0px 20px 0px;
+    position: relative;
+    opacity: 0%;
+    -webkit-animation: naomi-sc-scale-in-ease cubic-bezier(.3, -0.02, .29, 1.24) 1.0s;
+    animation: naomi-sc-scale-in-ease cubic-bezier(.3, -0.02, .29, 1.24) 0.4s;
+    animation-delay: 1000ms;
+    animation-fill-mode: forwards
+}
+
+yt-live-chat-paid-message-renderer[giftname="superchat"][price-level="50"] #purchase-amount::before {
+    content: '';
+    display: block;
+    position: absolute;
+    border-top: 5px solid #fff;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    bottom: -9px;
+    left: 8%;
+    border-top: 10px solid #dd9f77;
+    border-left: 2px solid transparent;
+    border-right: 10px solid transparent
+}
+
+yt-live-chat-paid-message-renderer[giftname="superchat"][price-level="100"] #content {
+    border: 0px solid #f2b1af;
+    background-color: transparent !important
+}
+
+yt-live-chat-paid-message-renderer[giftname="superchat"][price-level="100"] #message {
+    margin: 0px;
+    width: fit-content;
+    border: 0px solid #f2b1af;
+    background-color: transparent !important;
+    border-image-source: url("https://s2.loli.net/2022/01/07/9VuDOEUZ7feoMhY.png");
+    padding: 0px !important;
+    margin: 2px 0px 10px 4px;
+    border-width: 20px 10px 20px 0px;
+    border-style: solid transparent;
+    border-image-slice: 72 34 72 34;
+    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 50%, rgba(236, 193, 212, 1) 50%, rgba(236, 193, 212, 1) 99.5%, rgba(207, 93, 138, 1) 99.8%);
+    background-size: 200%;
+    background-position: 0 0;
+    background-clip: padding-box;
+    -webkit-animation: naomi-sc-text-select-100 cubic-bezier(.59, .03, .05, 1.05) 0.8s;
+    animation: naomi-sc-text-select-100 cubic-bezier(.59, .03, .05, 1.05) 0.8s;
+    animation-delay: 400ms;
+    animation-fill-mode: both
+}
+
+yt-live-chat-paid-message-renderer[giftname="superchat"][price-level="100"] #message::before {
+    content: " ";
+    width: 30px;
+    height: 21px;
+    border: 0px transparent solid;
+    background-image: url("https://s2.loli.net/2022/01/07/XaCmcqSgVedrwzF.png	");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: -19px;
+    left: -4px;
+    z-index: 2;
+    padding-left: 10px
+}
+
+yt-live-chat-paid-message-renderer[giftname="superchat"][price-level="100"] #purchase-amount {
+    width: fit-content;
+    white-space: nowrap;
+    border: 1px solid #dddddd;
+    border-radius: 22px !important;
+    background-color: #d97da1;
+    padding: 6px 28px 6px 32px;
+    margin: 0px 0px 20px 0px;
+    position: relative;
+    opacity: 0%;
+    -webkit-animation: naomi-sc-scale-in-ease cubic-bezier(.3, -0.02, .29, 1.24) 1.0s;
+    animation: naomi-sc-scale-in-ease cubic-bezier(.3, -0.02, .29, 1.24) 0.4s;
+    animation-delay: 1000ms;
+    animation-fill-mode: forwards
+}
+
+yt-live-chat-paid-message-renderer[giftname="superchat"][price-level="100"] #purchase-amount::before {
+    content: '';
+    display: block;
+    position: absolute;
+    border-top: 5px solid #fff;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    bottom: -9px;
+    left: 8%;
+    border-top: 10px solid #d97da1;
+    border-left: 2px solid transparent;
+    border-right: 10px solid transparent
+}
+
+yt-live-chat-paid-message-renderer[giftname="superchat"][price-level="1000"] #content {
+    border: 0px solid #f2b1af;
+    background-color: transparent !important
+}
+
+yt-live-chat-paid-message-renderer[giftname="superchat"][price-level="1000"] #message {
+    margin: 0px;
+    width: fit-content;
+    border: 0px solid #f2b1af;
+    background-color: transparent !important;
+    border-image-source: url("https://s2.loli.net/2022/01/07/ErRyvgnwKQkP92u.png");
+    padding: 0px !important;
+    margin: 2px 0px 10px 4px;
+    border-width: 20px 10px 20px 0px;
+    border-style: solid transparent;
+    border-image-slice: 72 34 72 34;
+    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 50%, rgba(242, 177, 175, 1) 50%, rgba(242, 177, 175, 1) 99.5%, rgba(222, 59, 52, 1) 99.8%);
+    background-size: 200%;
+    background-position: 0 0;
+    background-clip: padding-box;
+    -webkit-animation: naomi-sc-text-select-1000 cubic-bezier(.59, .03, .05, 1.05) 0.8s;
+    animation: naomi-sc-text-select-1000 cubic-bezier(.59, .03, .05, 1.05) 0.8s;
+    animation-delay: 400ms;
+    animation-fill-mode: both;
+    overflow: hidden
+}
+
+yt-live-chat-paid-message-renderer[giftname="superchat"][price-level="1000"] #message::before {
+    content: "";
+    width: 30px;
+    height: 21px;
+    border: 0px transparent solid;
+    background-image: url("https://s2.loli.net/2022/01/07/E1JmTb5FSRGOqIj.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: -19px;
+    left: -4px;
+    z-index: 2
+}
+
+yt-live-chat-paid-message-renderer[giftname="superchat"][price-level="1000"] #purchase-amount {
+    width: fit-content;
+    white-space: nowrap;
+    border: 1px solid #dddddd;
+    border-radius: 22px !important;
+    background-color: #e5625d;
+    padding: 6px 28px 6px 32px;
+    margin: 0px 0px 20px 0px;
+    position: relative;
+    opacity: 0%;
+    -webkit-animation: naomi-sc-scale-in-ease cubic-bezier(.3, -0.02, .29, 1.24) 1.0s;
+    animation: naomi-sc-scale-in-ease cubic-bezier(.3, -0.02, .29, 1.24) 0.4s;
+    animation-delay: 1000ms;
+    animation-fill-mode: forwards
+}
+
+yt-live-chat-paid-message-renderer[giftname="superchat"][price-level="1000"] #purchase-amount::before {
+    content: '';
+    display: block;
+    position: absolute;
+    border-top: 5px solid #fff;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    bottom: -9px;
+    left: 8%;
+    border-top: 10px solid #e5625d;
+    border-left: 2px solid transparent;
+    border-right: 10px solid transparent
+}
+
+yt-live-chat-text-message-renderer #author-photo {
+    overflow: visible !important;
+    position: relative !important;
+    top: 17px
+}
+
+yt-live-chat-text-message-renderer[author-type="owner"] #author-photo,
+yt-live-chat-text-message-renderer[author-type="member"] #author-photo,
+yt-live-chat-text-message-renderer[author-type="moderator"] #author-photo {
+    overflow: visible !important;
+    position: relative !important;
+    top: 20px;
+    left:0px;
+}
+
+yt-live-chat-paid-message-renderer #content {
+    text-align: center
+}
+
+yt-live-chat-paid-message-renderer[giftname="superchat"] #content {
+    text-align: left
+}
+
+yt-live-chat-paid-message-renderer #author-name {
+    max-width: 154px
+}
+
+yt-live-chat-text-message-renderer[is-owner="true"] #author-photo,
+yt-live-chat-text-message-renderer[author-type="owner"] #author-photo {
+margin:0px 0px 0px 12px!important;
+}
+yt-live-chat-text-message-renderer[is-owner="true"] #card,
+yt-live-chat-text-message-renderer[author-type="owner"] #card {
+  display:flex;
+  flex-direction:row-reverse!important;
+}
+yt-live-chat-text-message-renderer[is-owner="true"],
+yt-live-chat-text-message-renderer[author-type="owner"]  {
+  display:flex;
+  flex-direction:row-reverse!important;
+  text-align:right;
+}
+yt-live-chat-text-message-renderer[is-owner="true"] #image-and-message,
+yt-live-chat-text-message-renderer[author-type="owner"] #image-and-message{
+  text-align:left!important;
+}
+
+yt-live-chat-text-message-renderer {
+    margin: 0px 0px 0px 15px !important
+}
+
+@keyframes naomi-sc-scale-in-ease {
+    0% {
+        transform: translateY(100%) scale(1.0);
+        opacity: 10%
+    }
+
+    60% {
+        transform: translateY(10%) scale(1.0);
+        opacity: 80%
+    }
+
+    100% {
+        transform: translateY(15%) scale(1.0);
+        opacity: 100%
+    }
+}
+
+@keyframes naomi-sc-text-select-30 {
+    0% {
+        background-position: 0 0;
+        border-width: 0px
+    }
+
+    45% {
+        border-width: 0px
+    }
+
+    65% {
+        background-position: -100% 0;
+        background-size: 200%;
+        box-shadow: 0px 0px 0px 0px rgba(239, 240, 181, 1) inset
+    }
+
+    70% {
+        border-width: 0px;
+        box-shadow: 0px 0px 0px 2px rgba(239, 240, 181, 1) inset
+    }
+
+    85% {
+        background-position: -95% 0;
+        background-size: 210%;
+        border-width: 20px 10px 20px 0px
+    }
+
+    100% {
+        background-position: -95% 0;
+        background-size: 210%;
+        border-width: 20px 10px 20px 0px;
+        box-shadow: 0px 0px 0px 2px rgba(239, 240, 181, 1) inset
+    }
+}
+
+@keyframes naomi-sc-text-select-50 {
+    0% {
+        background-position: 0 0;
+        border-width: 0px
+    }
+
+    45% {
+        border-width: 0px
+    }
+
+    65% {
+        background-position: -100% 0;
+        background-size: 200%;
+        box-shadow: 0px 0px 0px 0px rgba(248, 220, 186, 1) inset
+    }
+
+    70% {
+        border-width: 0px;
+        box-shadow: 0px 0px 0px 2px rgba(248, 220, 186, 1) inset
+    }
+
+    85% {
+        background-position: -95% 0;
+        background-size: 210%;
+        border-width: 20px 10px 20px 0px
+    }
+
+    100% {
+        background-position: -95% 0;
+        background-size: 210%;
+        border-width: 20px 10px 20px 0px;
+        box-shadow: 0px 0px 0px 2px rgba(248, 220, 186, 1) inset
+    }
+}
+
+@keyframes naomi-sc-text-select-100 {
+    0% {
+        background-position: 0 0;
+        border-width: 0px
+    }
+
+    45% {
+        border-width: 0px
+    }
+
+    65% {
+        background-position: -100% 0;
+        background-size: 200%;
+        box-shadow: 0px 0px 0px 0px rgba(236, 193, 212, 1) inset
+    }
+
+    70% {
+        border-width: 0px;
+        box-shadow: 0px 0px 0px 2px rgba(236, 193, 212, 1) inset
+    }
+
+    85% {
+        background-position: -95% 0;
+        background-size: 210%;
+        border-width: 20px 10px 20px 0px
+    }
+
+    100% {
+        background-position: -95% 0;
+        background-size: 210%;
+        border-width: 20px 10px 20px 0px;
+        box-shadow: 0px 0px 0px 2px rgba(236, 193, 212, 1) inset
+    }
+}
+
+@keyframes naomi-sc-text-select-1000 {
+    0% {
+        background-position: 0 0;
+        border-width: 0px
+    }
+
+    45% {
+        border-width: 0px
+    }
+
+    65% {
+        background-position: -100% 0;
+        background-size: 200%;
+        box-shadow: 0px 0px 0px 0px rgba(242, 177, 175, 1) inset
+    }
+
+    70% {
+        border-width: 0px;
+        box-shadow: 0px 0px 0px 2px rgba(242, 177, 175, 1) inset
+    }
+
+    85% {
+        background-position: -95% 0;
+        background-size: 210%;
+        border-width: 20px 10px 20px 0px
+    }
+
+    100% {
+        background-position: -95% 0;
+        background-size: 210%;
+        border-width: 20px 10px 20px 0px;
+        box-shadow: 0px 0px 0px 2px rgba(242, 177, 175, 1) inset
+    }
+}
+
+@keyframes normal {
+    0% {
+        transform: translate(-100px, 0px);
+        filter: opacity(0)
+    }
+
+    100% {
+        transform: translate(0px, 0px);
+        filter: opacity(100%)
+    }
+}
+
+@keyframes owner {
+    0% {
+        transform: translate(100px, 0px);
+        filter: opacity(0)
+    }
+
+    100% {
+        transform: translate(0px, 0px);
+        filter: opacity(100%)
+    }
+}
+
+@keyframes swing {
+    0% {
+        transform: rotateX(-110deg);
+        transform-origin: bottom;
+        filter: opacity(0)
+    }
+
+    100% {
+        transform: rotateX(0);
+        transform-origin: bottom;
+        filter: opacity(100%)
+    }
+}
+
+@keyframes wave {
+    0% {
+        transform: translate(100%, 0px);
+        filter: opacity(0)
+    }
+
+    100% {
+        transform: translate(0px, 0px);
+        filter: opacity(100%)
+    }
+}
+
+@keyframes shadow1 {
+    0% {
+        transform: translate(20px, -20px);
+        filter: opacity(0);
+        box-shadow: 0px 0px 0px 0px rgba(197, 63, 61, 1) !important
+    }
+
+    100% {
+        box-shadow: 7px -5px 0px 1px rgba(197, 63, 61, 1) !important
+    }
+}
+
+@keyframes shadow2 {
+    0% {
+        transform: translate(20px, -20px);
+        filter: opacity(0);
+        box-shadow: 0px 0px 0px 0px rgba(197, 63, 61, 1) !important
+    }
+
+    100% {
+        box-shadow: 7px -5px 0px 1px rgba(105, 129, 185, 1) !important
+    }
+}
+
+@keyframes shadow3 {
+    0% {
+        transform: translate(20px, -20px);
+        filter: opacity(0);
+        box-shadow: none
+    }
+
+    100% {
+        box-shadow: 7px -5px 0px 1px rgba(105, 129, 185, 1)
+    }
+}
+
+@keyframes gift {
+    0% {
+        transform: translate(20px, 20px);
+        filter: opacity(0)
+    }
+
+    20% {
+        filter: opacity(0)
+    }
+
+    100% {}
+}
+
+@keyframes giftshadow {
+    0% {
+        transform: translate(-20px, -20px);
+        filter: opacity(0)
+    }
+
+    20% {
+        filter: opacity(0)
+    }
+
+    100% {}
+}
+
+yt-live-chat-text-message-renderer {
+    animation-name: normal;
+    animation-duration: 800ms;
+    animation-fill-mode: both;
+    animation-iteration-count: 1
+}
+
+yt-live-chat-text-message-renderer[is-owner="true"],
+yt-live-chat-text-message-renderer[author-type="owner"] {
+    animation-name: owner;
+    animation-duration: 800ms;
+    animation-fill-mode: both;
+    animation-iteration-count: 1
+}
+
+yt-live-chat-membership-item-renderer:not([is-owner="true"]):not([is-admin="true"])[privilegetype="1"] #card {
+    animation-name: shadow1;
+    animation-duration: 800ms;
+    animation-fill-mode: both;
+    animation-iteration-count: 1
+}
+
+yt-live-chat-membership-item-renderer:not([is-owner="true"]):not([is-admin="true"])[privilegetype="2"] #card {
+    animation-name: shadow2;
+    animation-duration: 800ms;
+    animation-fill-mode: both;
+    animation-iteration-count: 1
+}
+
+yt-live-chat-membership-item-renderer:not([is-owner="true"]):not([is-admin="true"])[privilegetype="3"] #card {
+    animation-name: shadow3;
+    animation-duration: 800ms;
+    animation-fill-mode: both;
+    animation-iteration-count: 1
+}
+
+yt-live-chat-membership-item-renderer #card::before {
+    animation-name: wave;
+    animation-delay: 600ms;
+    animation-duration: 2000ms;
+    animation-fill-mode: both;
+    animation-iteration-count: 1
+}
+
+yt-live-chat-paid-message-renderer {
+    animation-name: gift;
+    animation-duration: 800ms;
+    animation-fill-mode: both;
+    animation-iteration-count: 1
+}
+
+yt-live-chat-paid-message-renderer #content::after {
+    animation-name: giftshadow;
+    animation-duration: 800ms;
+    animation-fill-mode: both;
+    animation-iteration-count: 1
+}
+
+yt-live-chat-text-message-renderer #image-and-message {
+    display: block !important
+}
+
+yt-live-chat-text-message-renderer #image-and-message {
+    display: block !important
+}
+
+yt-live-chat-paid-message-renderer[price-level="0"] #content {
+    visibility: visible !important;
+    display: block !important
+}
+
+yt-live-chat-paid-message-renderer[price-level="0"] #card {
+    overflow: visible !important;
+    border: 0px solid transparent;
+    background-color: transparent !important;
+    border-image-source: url("https://s2.loli.net/2022/01/07/U3YDSTEzHQ7CLZc.png");
+    padding: 0px !important;
+    margin: 2px 0px 16px 4px;
+    border-width: 30px;
+    border-style: solid transparent;
+    border-image-slice: 60 60 60 60 fill
+}
+
+yt-live-chat-paid-message-renderer[price-level="0"] #content::after {
+    content: "";
+    width: calc(100% - 53px);
+    height: calc(100% - 33px);
+    border: 0px transparent solid;
+    background-image: url("https://s2.loli.net/2022/01/07/rxQWEfRPCcNstFX.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 16px;
+    bottom: 15px;
+    z-index: -1
+}
+
+yt-live-chat-paid-message-renderer[price-level="0"] #card::before {
+    content: "";
+    width: 40px;
+    height: 40px;
+    border: 0px transparent solid;
+    background-image: url("https://s2.loli.net/2022/01/07/aBEnULWDGJKvQdN.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: -13px;
+    left: 45px;
+    z-index: 2
+}
+
+yt-live-chat-paid-message-renderer[price-level="0"] #card::after {
+    content: "";
+    width: 40px;
+    height: 40px;
+    border: 0px transparent solid;
+    background-image: url("https://s2.loli.net/2022/01/07/xvQHMlbS3wtIrVj.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: -13px;
+    right: 43px;
+    z-index: 2
+}
+
+yt-live-chat-paid-message-renderer[price-level="0"] #content {
+    border: 1px solid #c8d1e5;
+    border-radius: 22px !important;
+    background-color: #c8d1e5 !important;
+    padding: 8px 16px !important
+}
+
+yt-live-chat-paid-message-renderer[price-level="0"] #purchase-amount {
+    visibility: hidden
+}
+
+yt-live-chat-paid-message-renderer[price-level="0"] #author-name::after {
+    content: "银瓜子";
+    position: absolute !important;
+    bottom: 0px;
+    left: 0px
+}
+
+yt-live-chat-paid-message-renderer[price-level="0"] #content::before {
+    content: "";
+    width: 50px;
+    height: 60px;
+    border: 0px transparent solid;
+    background-image: url("https://s2.loli.net/2022/05/06/TR9XfFYosOr15eK.png");
+    background-size: 50px 42px;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 42px;
+    right: 68px;
+    z-index: 2
+}

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="referrer" content="no-referrer" />
+    <link rel="stylesheet" href="./default.css" />
+    <link rel="stylesheet" href="./user.css" />
+</head>
+
+<body hidden>
+    <div id="container" class="container">
+        <yt-live-chat-ticker-renderer>
+            <div id="container" dir="ltr" class="style-scope yt-live-chat-ticker-renderer">
+                <template v-if="commentsGiftList != []">
+                    <transition-group tag="div" id="items" class="style-scope yt-live-chat-ticker-renderer">
+                        <template v-for="(giftComment, index) in commentsGiftList">
+                            <template v-if="giftComment.url != 'about:blank:comment-tester'">
+                                <template v-if="giftComment.service == 'bilibili'">
+                                    <yt-live-chat-ticker-paid-message-item-renderer tabindex="0"
+                                        class="style-scope yt-live-chat-ticker-renderer" style="overflow: hidden;"
+                                        :privilegeType="getGiftName(giftComment) == 'membership' ? giftComment.data.guard.level : ''"
+                                        :type="getGiftType(giftComment)" :price="getGiftPrice(giftComment)"
+                                        :giftName="getGiftName(giftComment)">
+                                        <div id="container" dir="ltr"
+                                            class="style-scope yt-live-chat-ticker-paid-message-item-renderer">
+                                            <div id="content" :type="getGiftType(giftComment)"
+                                                class="style-scope yt-live-chat-ticker-paid-message-item-renderer">
+                                                <img-shadow id="author-photo"
+                                                    class="style-scope yt-live-chat-ticker-paid-message-item-renderer"
+                                                    :imgUrl="giftComment.data.profileImage"></img-shadow>
+                                                <span id="text" dir="ltr"
+                                                    class="style-scope yt-live-chat-ticker-paid-message-item-renderer"
+                                                    v-if="getGiftName(giftComment) == 'superchat'">SC</span>
+                                                <span id="text" dir="ltr"
+                                                    class="style-scope yt-live-chat-ticker-paid-message-item-renderer"
+                                                    v-else-if="getGiftName(giftComment) == 'membership'">{{giftComment.data.guard.name}}</span>
+                                                <span id="text" dir="ltr"
+                                                    class="style-scope yt-live-chat-ticker-paid-message-item-renderer"
+                                                    v-else>{{
+                                                    getGiftName(giftComment) +"x"+ getGiftNumber(giftComment)
+                                                    }}</span>
+                                            </div>
+                                        </div>
+                                    </yt-live-chat-ticker-paid-message-item-renderer>
+                                </template>
+                            </template>
+                        </template>
+                    </transition-group>
+                </template>
+            </div>
+        </yt-live-chat-ticker-renderer>
+        <transition-group class="comments" name="comment" tag="div">
+            <template v-if="commentsWithMerge != []">
+                <template v-for="(comment, index) in commentsWithMerge">
+                    <template v-if="comment.url != 'about:blank:comment-tester'">
+                        <template v-if="comment.service == 'bilibili'">
+                            <template v-if="comment.data.hasGift">
+                                <template v-if="getGiftName(comment) == 'membership'">
+                                    <yt-live-chat-membership-item-renderer :privilegetype="comment.data.guard.level"
+                                        class="style-scope yt-live-chat-item-list-renderer style-scope yt-live-chat-item-list-renderer">
+                                        <div id="card" class="style-scope yt-live-chat-membership-item-renderer">
+                                            <div id="header" class="style-scope yt-live-chat-membership-item-renderer">
+                                                <yt-img-shadow
+                                                    class="no-transition style-scope yt-live-chat-text-message-renderer"
+                                                    id="author-photo">
+                                                    <img id="img" alt="" :src="comment.data.profileImage"
+                                                        class="style-scope yt-img-shadow">
+                                                </yt-img-shadow>
+                                                <div id="header-content"
+                                                    class="style-scope yt-live-chat-membership-item-renderer">
+                                                    <div id="header-content-primary-column"
+                                                        class="style-scope yt-live-chat-membership-item-renderer">
+                                                        <div id="header-content-inner-column"
+                                                            class="style-scope yt-live-chat-membership-item-renderer">
+                                                            <yt-live-chat-author-chip
+                                                                class="style-scope yt-live-chat-membership-item-renderer">
+                                                                <span id="author-name" dir="auto"
+                                                                    class="style-scope yt-live-chat-author-chip">{{comment.data.displayName}}<span
+                                                                        id="chip-badges"
+                                                                        class="style-scope yt-live-chat-author-chip">
+                                                                    </span>
+                                                                </span>
+                                                            </yt-live-chat-author-chip>
+                                                        </div>
+                                                        <div id="header-subtext"
+                                                            class="style-scope yt-live-chat-membership-item-renderer">
+                                                            新会员</div>
+                                                    </div>
+                                                    <span id="timestamp"
+                                                        class="style-scope yt-live-chat-text-message-renderer">{{getTime(comment)}}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </yt-live-chat-membership-item-renderer>
+                                </template>
+                                <template v-else>
+                                    <yt-live-chat-paid-message-renderer :giftname="getGiftName(comment)"
+                                        :price-level="getGiftPriceLevel(comment)" :style="{
+                                            '--yt-live-chat-paid-message-secondary-color': getPriceColor(getGiftPriceLevel(comment)).colors.headerBg,
+                                            '--yt-live-chat-paid-message-primary-color': getPriceColor(getGiftPriceLevel(comment)).colors.contentBg,
+                                            '--yt-live-chat-paid-message-header-color': getPriceColor(getGiftPriceLevel(comment)).colors.header,
+                                            '--yt-live-chat-paid-message-color': getPriceColor(getGiftPriceLevel(comment)).colors.content
+                                          }"
+                                        class="style-scope yt-live-chat-item-list-renderer style-scope yt-live-chat-item-list-renderer">
+                                        <div id="card" class="style-scope yt-live-chat-paid-message-renderer">
+                                            <div id="header" class="style-scope yt-live-chat-paid-message-renderer">
+                                                <yt-img-shadow loaded=""
+                                                    class="no-transition style-scope yt-live-chat-text-message-renderer"
+                                                    id="author-photo">
+                                                    <img id="img" alt="" :src="comment.data.profileImage"
+                                                        class="style-scope yt-img-shadow">
+                                                </yt-img-shadow>
+                                                <div id="header-content"
+                                                    class="style-scope yt-live-chat-paid-message-renderer">
+                                                    <div id="header-content-primary-column"
+                                                        class="style-scope yt-live-chat-paid-message-renderer">
+                                                        <div id="author-name"
+                                                            class="style-scope yt-live-chat-paid-message-renderer">
+                                                            {{comment.data.displayName}}</div>
+                                                        <div v-if="getGiftPriceLevel(comment) == '0'"
+                                                            id="purchase-amount"
+                                                            class="style-scope yt-live-chat-paid-message-renderer">
+                                                            银瓜子
+                                                        </div>
+                                                        <div v-else id="purchase-amount"
+                                                            class="style-scope yt-live-chat-paid-message-renderer">
+                                                            {{"CN¥" + getGiftPrice(comment)}}</div>
+                                                    </div><span id="timestamp"
+                                                        class="style-scope yt-live-chat-paid-message-renderer">{{getTime(comment)}}</span>
+                                                </div>
+                                            </div>
+                                            <div id="content" class="style-scope yt-live-chat-paid-message-renderer">
+                                                <div v-if="getGiftName(comment) == 'superchat'" id="message"
+                                                    class="style-scope yt-live-chat-paid-message-renderer">
+                                                    {{comment.data.superChatData.message}}
+                                                </div>
+                                                <div v-else id="message"
+                                                    class="style-scope yt-live-chat-paid-message-renderer">
+                                                    {{"赠送" + " " + getGiftName(comment) + "x" +
+                                                    getGiftNumber(comment)}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </yt-live-chat-paid-message-renderer>
+                                </template>
+                            </template>
+                            <template v-else>
+                                <yt-live-chat-text-message-renderer :medal-level="comment.data.infoData[3][0]"
+                                    :author-type="getAutherType(comment)" :privilegetype="comment.data.infoData[7]"
+                                    :is-admin="comment.data.isModerator === true"
+                                    :is-owner="comment.data.isOwner === true" :is-fan-group="isFanGroup(comment)"
+                                    class="style-scope yt-live-chat-item-list-renderer">
+                                    <div id="card" class="style-scope yt-live-chat-text-message-renderer">
+                                        <yt-img-shadow
+                                            class="no-transition style-scope yt-live-chat-text-message-renderer"
+                                            id="author-photo">
+                                            <img id="img" alt="" :src="comment.data.profileImage"
+                                                class="style-scope yt-img-shadow">
+                                        </yt-img-shadow>
+                                        <div id="content" class="style-scope yt-live-chat-text-message-renderer">
+                                            <yt-live-chat-author-chip
+                                                class="style-scope yt-live-chat-text-message-renderer">
+                                                <span id="timestamp"
+                                                    class="style-scope yt-live-chat-text-message-renderer">{{getTime(comment)}}</span>
+                                                <span id="author-name" dir="auto" :type="getAutherType(comment)"
+                                                    class="style-scope yt-live-chat-author-chip">
+                                                    {{comment.data.displayName}}
+                                                    <span id="chip-badges" class="style-scope yt-live-chat-author-chip">
+                                                    </span>
+                                                </span>
+                                                <span id="chat-medal" class="style-scope yt-live-chat-author-chip">
+                                                    <yt-live-chat-author-medal-renderer
+                                                        v-if="comment.data.infoData[3][1] != undefined"
+                                                        :medal-name="comment.data.infoData[3][1]"
+                                                        :medal-nevel="comment.data.infoData[3][0]"
+                                                        :is-fan-group="isFanGroup(comment)">
+                                                        <div id='medal-card'
+                                                            class="style-scope yt-live-chat-author-medal-renderer">
+                                                            <div id='medal-name'
+                                                                class="style-scope yt-live-chat-author-medal-renderer">
+                                                                {{comment.data.infoData[3][1]}}</div>
+                                                            <div id='medal-level'
+                                                                class="style-scope yt-live-chat-author-medal-renderer">
+                                                                {{comment.data.infoData[3][0]}}</div>
+                                                        </div>
+                                                    </yt-live-chat-author-medal-renderer>
+                                                </span>
+                                            </yt-live-chat-author-chip>
+                                            <div id="image-and-message"
+                                                class="style-scope yt-live-chat-text-message-renderer">
+                                                <img v-if="isCommentImg(comment)" :src="getCommentImg(comment)" id="img"
+                                                    class="emoji yt-formatted-string style-scope yt-live-chat-text-message-renderer">
+                                                </img>
+                                                <span v-else id="message"
+                                                    class="style-scope yt-live-chat-text-message-renderer">
+                                                    {{comment.data.comment}}
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </yt-live-chat-text-message-renderer>
+                            </template>
+                        </template>
+                        <template v-if="comment.service == 'youtube'">
+                            <div>ToDo YouTube</div>
+                        </template>
+
+                    </template>
+                </template>
+            </template>
+        </transition-group>
+    </div>
+    <script src="../__origin/js/vue.min.js"></script>
+    <script src="../__origin/js/onesdk.js"></script>
+    <script src="./script.js"></script>
+</body>
+
+<style>
+    yt-live-chat-ticker-renderer {
+        display: none;
+    }
+    /* 价格贴纸的实现与blivechat不同且不会自行消失，不需要顶端价格贴纸可以将以下样式注释掉 */
+    /* .comments {
+        margin-top: 40px;
+        overflow: hidden;
+    }
+
+    yt-live-chat-ticker-renderer {
+        display: block;
+        position: absolute;
+        left: 0px;
+        top: -40px;
+        width: 100%;
+        height: fit-content;
+        z-index: 1;
+    } */
+</style>
+
+</html>
