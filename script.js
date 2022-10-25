@@ -83,7 +83,7 @@ const app = Vue.createApp({
   watch: {
     comments(newComments, oldComments) {
       if (newComments == []) {
-        if (SYNC_CACHE == true) {
+        if (SYNC_CACHE) {
           this.commentsWithMerge = [];
         }
       }
@@ -91,21 +91,29 @@ const app = Vue.createApp({
         //获取新增消息，因为消息原始值只会增多
         let addComments = newComments.filter(item => !oldComments.includes(item));
         for (var addComment of addComments) {
-          if (addComment.data.hasOwnProperty("gift")) {
-            let oldIndex = this.commentsWithMerge.findIndex(comment => comment.data.giftId == addComment.data.giftId && ((addComment.data.timestamp - comment.data.timestamp) < 10000));
-            //console.error("Index is:", JSON.stringify(oldIndex));
-            if (oldIndex != -1) {
-              addComment.data.giftData.num += this.commentsWithMerge[oldIndex].data.giftData.num;
-              this.commentsWithMerge.splice(oldIndex, 1, addComment);
-              this.commentsGiftList.splice(oldIndex, 1, addComment);
+          if (addComment.service == "bilibili") {
+            if (addComment.data.hasOwnProperty("gift")) {
+              let oldIndex = this.commentsWithMerge.findIndex(comment => comment.data.giftId == addComment.data.giftId && ((addComment.data.timestamp - comment.data.timestamp) < 10000));
+              //console.error("Index is:", JSON.stringify(oldIndex));
+              if (oldIndex != -1) {
+                addComment.data.giftData.num += this.commentsWithMerge[oldIndex].data.giftData.num;
+                this.commentsWithMerge.splice(oldIndex, 1, addComment);
+                this.commentsGiftList.splice(oldIndex, 1, addComment);
+              }
+              else {
+                this.commentsWithMerge.push(addComment);
+                this.commentsGiftList.push(addComment);
+              }
             }
             else {
               this.commentsWithMerge.push(addComment);
-              this.commentsGiftList.push(addComment);
             }
           }
-          else {
+          else if (addComment.service == "youtube") {
             this.commentsWithMerge.push(addComment);
+            if (addComment.data.hasGift) {
+              this.commentsGiftList.push(addComment);
+            }
           }
         }
         while (this.commentsWithMerge.length > LIMIT) {
@@ -119,12 +127,13 @@ const app = Vue.createApp({
   },
   methods: {
     getPriceColor(priceLevel) {
-    for (const config of PRICE_COLOR) {
-      if (priceLevel >= config.price) {
-        return config
+      for (const config of PRICE_COLOR) {
+        if (priceLevel >= config.price) {
+          return config
+        }
       }
-    }
-  },
+    },
+    //Only used on bilibili
     isCommentImg(comment) {
       if (comment.data.infoData[0][12] == 1) {
         return true
@@ -135,11 +144,17 @@ const app = Vue.createApp({
       return comment.data.infoData[0][13].url
     },
     isFanGroup(comment) {
-      let tempRoomId = comment.url.replace("https://live.bilibili.com/", "");
-      if (comment.data.infoData[3][3] == tempRoomId) {
-        return true
+      if (comment.service == "bilibili") {
+        let tempRoomId = comment.url.replace("https://live.bilibili.com/", "");
+        if (comment.data.infoData[3][3] == tempRoomId) {
+          return true
+        }
+        else {
+          return false
+        }
       }
-      else {
+      else if (comment.service == "youtube") {
+        //油管消息不判断是否为粉丝团
         return false
       }
     },
@@ -150,80 +165,119 @@ const app = Vue.createApp({
       return hours + ":" + minutes
     },
     getAutherType(comment) {
-      if (comment.data.infoData[7] > 0) {
-        return "member"
+      if (comment.service == "bilibili") {
+        if (comment.data.infoData[7] > 0) {
+          return "member"
+        }
+        else if (comment.data.isModerator) {
+          return "moderator"
+        }
+        else if (comment.data.isOwner) {
+          return "owner"
+        }
+        else {
+          return ""
+        }
       }
-      else if (comment.data.isModerator == true) {
-        return "moderator"
-      }
-      else if (comment.data.isOwner == true) {
-        return "owner"
-      }
-      else {
-        return ""
+      else if (comment.service == "youtube") {
+        if (comment.data.badges != []) {
+          return "member"
+        }
+        else if (comment.data.isModerator) {
+          return "moderator"
+        }
+        else if (comment.data.isOwner) {
+          return "owner"
+        }
+        else {
+          return ""
+        }
       }
     },
     //基于Blivechat的对应分类
-    getGiftType(comment){
-      if (comment.data.hasOwnProperty("guard")) {
-        return 2
+    getGiftType(comment) {
+      if (comment.service == "bilibili") {
+        if (comment.data.hasOwnProperty("guard")) {
+          return 2
+        }
+        else if (comment.data.hasOwnProperty("gift")) {
+          return 1
+        }
+        else if (comment.data.hasOwnProperty("superChatData")) {
+          return 3
+        }
       }
-      else if (comment.data.hasOwnProperty("gift")) {
-        return 1
-      }
-      else if (comment.data.hasOwnProperty("superChatData")) {
-        return 3
+      else if (comment.service == "youtube") {
+        if (comment.data.hasOwnProperty("superChatData")) {
+          return 3
+        }
       }
     },
     getGiftName(comment) {
-      if (comment.data.hasOwnProperty("guard")) {
-        return "membership"
+      if (comment.service == "bilibili") {
+        if (comment.data.hasOwnProperty("guard")) {
+          return "membership"
+        }
+        else if (comment.data.hasOwnProperty("gift")) {
+          return comment.data.gift.name
+        }
+        else if (comment.data.hasOwnProperty("superChatData")) {
+          return "superchat"
+        }
+        else {
+          return "Not paid message"
+        }
       }
-      else if (comment.data.hasOwnProperty("gift")) {
-        return comment.data.gift.name
-      }
-      else if (comment.data.hasOwnProperty("superChatData")) {
+      else if (comment.service == "youtube") {
         return "superchat"
       }
-      else {
-        return "Not paid message"
-      }
+
     },
     getGiftNumber(comment) {
       return comment.data.giftData.num
     },
     getGiftPrice(comment) {
-      if (comment.data.hasOwnProperty("gift")) {
-        let tempPrice = 0.0;
-        tempPrice = comment.data.giftData.num * comment.data.gift.price / 1000;
-        if (comment.data.gift.coin_type == "silver") {
-          return "0"
+      if (comment.service == "bilibili") {
+        if (comment.data.hasOwnProperty("gift")) {
+          let tempPrice = 0.0;
+          tempPrice = comment.data.giftData.num * comment.data.gift.price / 1000;
+          if (comment.data.gift.coin_type == "silver") {
+            return "0"
+          }
+          else {
+            return tempPrice
+          }
         }
         else {
-          return tempPrice
+          return comment.data.price;
         }
       }
-      else {
+      else if (comment.service == "youtube") {
         return comment.data.price;
       }
     },
     getGiftPriceLevel(comment) {
       let tempPrice = 0.0;
-      if (comment.data.hasOwnProperty("gift")) {
-        if (comment.data.gift.coin_type == "silver") {
-          tempPrice = 0.0
+      if (comment.service == "bilibili") {
+        if (comment.data.hasOwnProperty("gift")) {
+          if (comment.data.gift.coin_type == "silver") {
+            tempPrice = 0.0
+          }
+          else {
+            tempPrice = comment.data.giftData.num * comment.data.gift.price / 1000;
+          }
         }
         else {
-          tempPrice = comment.data.giftData.num * comment.data.gift.price / 1000;
+          tempPrice = comment.data.price;
+        }
+        if (comment.data.hasOwnProperty("gift")) {
+          if (comment.data.gift.coin_type == "silver") {
+            return "0"
+          }
         }
       }
-      else {
-        tempPrice = comment.data.price;
-      }
-      if (comment.data.hasOwnProperty("gift")) {
-        if (comment.data.gift.coin_type == "silver") {
-          return "0"
-        }
+      else if (comment.service == "youtube") {
+        tempPrice = comment.data.price
       }
       if (tempPrice < 1) {
         return "0.1"
