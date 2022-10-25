@@ -208,9 +208,7 @@ const app = Vue.createApp({
         }
       }
       else if (comment.service == "youtube") {
-        if (comment.data.hasOwnProperty("superChatData")) {
           return 3
-        }
       }
     },
     getGiftName(comment) {
