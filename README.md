@@ -1,7 +1,7 @@
 # blivechat-dom-onecomme
 DOM of blivechat that can used in OneComme for comments display and decoration
 ## How to use this plugin?
->For users who can understand Japanese, you could find using guide on [OneComme official website](https://pages.github.com/).
+>For users who can understand Japanese, you could find using guide on [OneComme official website](https://onecomme.com/docs/guide).
 ### 1. Download the whole file and unziped the file
 ### 2. Find the templates file of OneComme
 #### 1. For MAC users, you could fin the file in the folowing path:
@@ -12,7 +12,7 @@ DOM of blivechat that can used in OneComme for comments display and decoration
 ### 4. Open OneComme and use template in the templates list with the same name of plugin file
 
 ## 如何使用本插件
->如果您能够阅读日文，您可以在[OneComme官方网站](https://pages.github.com/)阅读基础的使用教程。
+>如果您能够阅读日文，您可以在[OneComme官方网站](https://onecomme.com/docs/guide)阅读基础的使用教程。
 ### 1. 下载并解压文件夹
 ### 2. 找到OneComme的模版文件夹
 #### 1. MAC用户可以在以下路径找到:
